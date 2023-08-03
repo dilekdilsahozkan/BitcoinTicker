@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/tools">
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint android:id="@+id/coinImage" />
+
+        <Constraint
+            android:id="@+id/toolbar"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@id/coinImage"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <Constraint
+            android:id="@+id/toolbar"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start">
+
+        <KeyFrameSet>
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="100"
+                app:motionTarget="@+id/coinImage" />
+
+            <KeyAttribute
+                android:scaleX="1"
+                app:framePosition="100"
+                app:motionTarget="@+id/coinImage" />
+
+            <KeyAttribute
+                android:scaleY="1"
+                app:framePosition="100"
+                app:motionTarget="@+id/coinImage" />
+
+        </KeyFrameSet>
+
+        <OnSwipe app:touchAnchorId="@+id/coinDetailLayout"
+            app:touchAnchorSide="top"
+            app:dragDirection="dragUp"/>
+
+    </Transition>
+
+</MotionScene>

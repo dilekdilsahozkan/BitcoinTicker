@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="coinDetail"
+            type="com.example.bitcointicker.data.dto.CoinDetailDto" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/background_top"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/closeIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_close"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Coin Detail"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_bold"
+                    app:layout_constraintStart_toEndOf="@id/closeIcon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/coinImage"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="centerInside"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraint"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/petDetailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="-25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/coinImage">
+
+                <TextView
+                    android:id="@+id/coinName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:maxLength="25"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:fontFamily="@font/poppins_bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="Coin Name" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/coinPrices"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/coinName">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="25dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/background_soft_orange"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/currentPriceText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:gravity="center"
+                            android:text="Current Price"
+                            android:textSize="15dp"
+                            android:fontFamily="@font/poppins_medium"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/currentPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="center"
+                            app:layout_constraintTop_toBottomOf="@id/currentPriceText"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="25dp"
+                        android:background="@drawable/background_soft_orange"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/changePercentageText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Change Percentage"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textSize="15dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/changePercentage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="center"
+                            app:layout_constraintTop_toBottomOf="@id/changePercentageText"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/hashingAlgorithm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:text="Hashing Algorithm: "
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintTop_toBottomOf="@id/coinPrices"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/hashingAlgorithmData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:text="@{coinDetail.hashing_algorithm}"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/poppins_regular"
+                    app:layout_constraintTop_toBottomOf="@id/hashingAlgorithm"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/coinDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:text="Coin Description: "
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintTop_toBottomOf="@id/hashingAlgorithmData"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/coinDescriptionData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@{coinDetail.description.en}"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/poppins_regular"
+                    app:layout_constraintTop_toBottomOf="@id/coinDescription"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
