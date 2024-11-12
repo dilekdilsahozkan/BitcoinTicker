@@ -1,17 +1,1 @@
-Uygulamanın isterlerinde de belirtildiği gibi ilk olarak CoinGecko API'sine erişim sağladım.
-Projeyi oluşturduktan sonra ilk olarak uygulamanın gerekliliklerini çıkartıp,
-clean architecture'a uygun olarak paket düzenlemelerini yaptım.
-Almış olduğum Retrofit kütüphanesini kullanarak API isteklerini oluşturdum.
-Eriştigim verileri istenilenlerden anladığım üzere ana sayfa şeklinde listeledim
-ve her liste elemanına tıklandığında detay sayfasına gidecek şek'ilde düzenledim.
-Detay sayfasında ise istenildiği gibi Coin'nin hashing algoritması, adı, görseli,
-son 24 saat içindeki değişim yüzdesi ve açıklaması bulunmaktadır.
-Case projesi kapsamında olduğu için detaylandırmadım.
-Favoriler sayfası için gönderdiğiniz dosyada belirtildiği üzere Firebase kullandım.
 
-Oluşturduğum projenin genel detayları bu şekildedir.
-
---------------------------------------------------------------------------------------------------------------------------------------------
-
-
-Dilek Dilşah Özkan
